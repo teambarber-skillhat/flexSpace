@@ -37,6 +37,11 @@ const config: Config = {
       container: '#FC8415',
       link: '#DEE1E5',
     },
+    screens: {
+      sm: '430px',
+      md: '1024px',
+      lg: '1440px',
+    },
   },
   plugins: [],
 };

@@ -42,7 +42,7 @@ export default function Accordion() {
   };
 
   return (
-    <div className="mb-10 flex flex-col gap-4">
+    <div className="m-auto mb-10 flex max-w-[700px] flex-col gap-4 md:mb-20">
       {items.map((item, index) => (
         <AccordionItem
           key={index}

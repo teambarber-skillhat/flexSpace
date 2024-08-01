@@ -10,7 +10,7 @@ interface ForCardProps {
 
 export default function ForCard({ svg, title, text, isHost }: ForCardProps) {
   return (
-    <li className="mb-6 flex items-start justify-between">
+    <li className="mb-6 flex items-start">
       <div
         className={clsx(
           'mr-4 rounded-full p-2.5',

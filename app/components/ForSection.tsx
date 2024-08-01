@@ -32,7 +32,9 @@ export default function ForSection({
           How It Works
         </h2>
       </div>
-      {children}
+      <div className="flex flex-col items-center justify-center md:flex-row md:gap-10 lg:gap-20">
+        {children}
+      </div>
     </Section>
   );
 }

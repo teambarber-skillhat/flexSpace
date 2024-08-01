@@ -10,31 +10,28 @@ import ForStylistList from './components/ForStylistList';
 import Accordion from './components/Accordion';
 import Button from './components/Button';
 import Footer from './components/Footer';
+import HeroImage from './components/HeroImage';
 
 export default function Home() {
   return (
     <div className="flex min-h-screen flex-col">
-      <header className="bg-bgColorHero px-6 py-4">
+      <header className="rounded-b-3xl bg-bgColorHero px-6 py-4 md:px-12 lg:px-[120px]">
         <p className="font-jockeyOne text-2xl text-buttonBg">FlexSpace</p>
       </header>
       <Section bgColor="bgColorHero">
-        <h1 className="text-center text-3xl font-bold tracking-[-1.75px] text-mainDarkColor">
+        <h1 className="text-center text-3xl font-bold tracking-[-1.75px] text-mainDarkColor md:text-5xl">
           Your Go-To Platform for{' '}
           <span className="text-accentColor">Flexible</span> Salon Space Leasing
         </h1>
-        <p className="p-4 text-center text-base font-medium leading-8 tracking-[-0.3px] text-textColorDark">
+        <p className="p-4 text-center text-base font-medium leading-8 tracking-[-0.3px] text-textColorDark md:p-6">
           Salon Owners, Monetize Your Space. Stylists, Find the Perfect Fit.
           Lease with Flexibility and Ease.
         </p>
         <Form />
-        <Image
-          src="/hero-mobile.jpg"
-          height={500}
-          alt="salon-chairs-and-mirror"
-          width={382}
-        />
+        <HeroImage />
       </Section>
       <WhySection
+        first={false}
         id="host"
         accentTitle="Host"
         title="on FlexSpace?"
@@ -46,6 +43,7 @@ export default function Home() {
         <HostList />
       </WhySection>
       <WhySection
+        first={true}
         id="rent"
         accentTitle="Rent"
         title="with FlexSpace?"
@@ -60,6 +58,7 @@ export default function Home() {
           height={400}
           alt="salon-and-master"
           width={382}
+          className="md:order-first md:flex-1"
         />
       </ForSection>
       <ForSection isHost={false} tag="For Stylist" id="for-stylist">
@@ -69,6 +68,7 @@ export default function Home() {
           height={400}
           alt="booking-and-master"
           width={382}
+          className="md:flex-1"
         />
       </ForSection>
       <Section>
@@ -76,44 +76,47 @@ export default function Home() {
           <span className="rounded-3xl bg-iconBgPrimary px-3 py-1 text-titleColorSecondary">
             FAQs
           </span>
-          <h2 className="mb-10 text-center text-2xl font-semibold leading-7 tracking-[-0.3px] text-mainDarkColor">
+          <h2 className="mb-10 text-center text-2xl font-semibold leading-7 tracking-[-0.3px] text-mainDarkColor md:mb-20 md:text-[28px]">
             We&apos;re happy to answer your questions
           </h2>
         </div>
         <Accordion />
-        <div className="rounded-2xl bg-cardBgThree px-4 py-6">
-          <h2 className="mb-2 text-lg font-semibold leading-6 tracking-[-0.3px]">
-            Still have questions?
-          </h2>
-          <p className="mb-4 text-sm font-medium leading-5 tracking-[-0.2px] text-cardTwoText">
-            Can&apos;t find the answer you&apos;re looking for? Please get in
-            touch with our team.
-          </p>
+        <div className="rounded-2xl bg-cardBgThree px-4 py-6 md:flex md:justify-between md:p-8">
+          <div>
+            <h2 className="mb-2 text-lg font-semibold leading-6 tracking-[-0.3px]">
+              Still have questions?
+            </h2>
+            <p className="mb-4 text-sm font-medium leading-5 tracking-[-0.2px] text-cardTwoText md:text-base">
+              Can&apos;t find the answer you&apos;re looking for? Please get in
+              touch with our team.
+            </p>
+          </div>
+
           <Button>Get in Touch</Button>
         </div>
       </Section>
       <Section>
-        <div className="relative h-[600px] overflow-hidden rounded-2xl bg-container px-4 py-6">
-          <h1 className="text-center font-jockeyOne text-3xl font-bold tracking-[-1.75px] text-cardOneText">
+        <div className="relative h-[600px] overflow-hidden rounded-2xl bg-container px-4 py-6 md:h-[355px] md:self-start md:p-20">
+          <h1 className="text-center font-jockeyOne text-3xl font-bold tracking-[-1.75px] text-cardOneText md:text-start">
             Be the First to Experience FlexSpace!
           </h1>
-          <p className="p-4 text-xl font-semibold leading-7 tracking-[-0.3px] text-cardOneText">
+          <p className="mb-6 mt-2 text-xl font-semibold leading-7 tracking-[-0.3px] text-cardOneText">
             Join Our Waitlist and Unlock Exclusive Early Access
           </p>
-          <Form />
+          <Form second={true} />
           <Image
             src="/stylist-one.png"
             height={284}
             alt="stylist-with-client"
             width={207}
-            className="absolute left-[15.73px] top-[353px] max-h-[284px] rotate-[9deg] transform rounded-xl"
+            className="absolute left-[15.73px] top-[353px] max-h-[284px] rotate-[9deg] transform rounded-xl md:left-[567px] md:top-[115px] lg:left-[820px] lg:top-[80px]"
           />
           <Image
             src="/stylist-two.png"
             height={131}
             alt="barber-with-client"
             width={133}
-            className="absolute left-[251.45px] top-[465.3px] max-h-[131px] rotate-[-7.53deg] transform rounded-lg"
+            className="absolute left-[251.45px] top-[465.3px] max-h-[131px] rotate-[-7.53deg] transform rounded-lg md:left-[820px] md:top-[220px] lg:left-[1050px] lg:top-[230px] lg:rotate-0"
           />
         </div>
       </Section>
