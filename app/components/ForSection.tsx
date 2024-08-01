@@ -3,14 +3,20 @@ import Section from './Section';
 import clsx from 'clsx';
 
 interface ForSectionProps {
+  id: string;
   children: React.ReactNode;
   isHost: boolean;
   tag: string;
 }
 
-export default function ForSection({ children, isHost, tag }: ForSectionProps) {
+export default function ForSection({
+  children,
+  isHost,
+  tag,
+  id,
+}: ForSectionProps) {
   return (
-    <Section bgColor={isHost ? '' : 'bgColorHero'}>
+    <Section bgColor={isHost ? '' : 'bgColorHero'} id={id}>
       <div className="flex flex-col items-center justify-center gap-2">
         <span
           className={clsx(

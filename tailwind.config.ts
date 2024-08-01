@@ -34,6 +34,8 @@ const config: Config = {
       cardOneTitle: '#F9FAFB',
       cardOneText: '#F4F5F6',
       cardTwoText: '#4F5662',
+      container: '#FC8415',
+      link: '#DEE1E5',
     },
   },
   plugins: [],

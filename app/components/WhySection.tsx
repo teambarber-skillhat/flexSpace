@@ -2,6 +2,7 @@ import React from 'react';
 import Section from './Section';
 
 interface whySectionProps {
+  id?: string;
   children: React.ReactNode;
   accentTitle: string;
   title: string;
@@ -9,13 +10,14 @@ interface whySectionProps {
 }
 
 export default function WhySection({
+  id,
   children,
   accentTitle,
   title,
   description,
 }: whySectionProps) {
   return (
-    <Section>
+    <Section id={id}>
       <h2 className="text-2xl font-bold leading-[60px] tracking-[-1.75px] text-mainDarkColor">
         Why <span className="text-accentColor">{accentTitle}</span> {title}
       </h2>
