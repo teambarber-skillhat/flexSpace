@@ -1,3 +1,4 @@
+// 'use client';
 import Section from './components/Section';
 import Form from './components/Form';
 import Image from 'next/image';
@@ -8,9 +9,9 @@ import ForSection from './components/ForSection';
 import ForHostList from './components/ForHostList';
 import ForStylistList from './components/ForStylistList';
 import Accordion from './components/Accordion';
-import Button from './components/Button';
 import Footer from './components/Footer';
 import HeroImage from './components/HeroImage';
+import GetInTouch from './components/GetInTouch';
 
 export default function Home() {
   return (
@@ -81,19 +82,7 @@ export default function Home() {
           </h2>
         </div>
         <Accordion />
-        <div className="rounded-2xl bg-cardBgThree px-4 py-6 md:flex md:justify-between md:p-8">
-          <div>
-            <h2 className="mb-2 text-lg font-semibold leading-6 tracking-[-0.3px]">
-              Still have questions?
-            </h2>
-            <p className="mb-4 text-sm font-medium leading-5 tracking-[-0.2px] text-cardTwoText md:text-base">
-              Can&apos;t find the answer you&apos;re looking for? Please get in
-              touch with our team.
-            </p>
-          </div>
-
-          <Button>Get in Touch</Button>
-        </div>
+        <GetInTouch />
       </Section>
       <Section>
         <div className="relative h-[600px] overflow-hidden rounded-2xl bg-container px-4 py-6 md:h-[355px] md:self-start md:p-20">
