@@ -1,4 +1,3 @@
-// 'use client';
 import Section from './components/Section';
 import Form from './components/Form';
 import Image from 'next/image';
