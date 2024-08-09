@@ -11,13 +11,12 @@ import Accordion from './components/Accordion';
 import Footer from './components/Footer';
 import HeroImage from './components/HeroImage';
 import GetInTouch from './components/GetInTouch';
+import Header from './components/Header';
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen flex-col">
-      <header className="rounded-b-3xl bg-bgColorHero px-6 py-4 md:px-12 lg:px-[120px]">
-        <p className="font-jockeyOne text-2xl text-buttonBg">FlexSpace</p>
-      </header>
+    <div className="flex min-h-screen flex-col" id="home">
+      <Header />
       <Section bgColor="bgColorHero">
         <h1 className="text-center text-3xl font-bold tracking-[-1.75px] text-mainDarkColor md:text-5xl">
           Your Go-To Platform for{' '}
@@ -71,7 +70,7 @@ export default function Home() {
           className="md:flex-1"
         />
       </ForSection>
-      <Section>
+      <Section id="faq">
         <div className="flex flex-col items-center justify-center gap-2">
           <span className="rounded-3xl bg-iconBgPrimary px-3 py-1 text-titleColorSecondary">
             FAQs

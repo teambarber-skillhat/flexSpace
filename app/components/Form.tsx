@@ -53,7 +53,11 @@ export default function Form({ second }: { second?: boolean }) {
         ref.current && ref.current.reset();
       }}
     >
-      <input name="email" className="w-36 p-2" placeholder="Enter your email" />
+      <input
+        name="email"
+        className="w-36 p-2 outline-none"
+        placeholder="Enter your email"
+      />
       <Button type="submit">Join Waitlist</Button>
     </form>
   );

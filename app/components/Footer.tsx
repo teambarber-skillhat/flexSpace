@@ -1,14 +1,15 @@
 import React from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 
 export default function Footer() {
   return (
     <footer className="bg-buttonBg px-6 py-10 md:px-8 md:py-20 lg:px-[120px] lg:py-20">
       <div className="items-start justify-between md:flex">
         <div className="mb-6 px-0 py-4">
-          <p className="font-jockeyOne text-2xl text-mainLightColor">
-            FlexSpace
-          </p>
+          <Link href="#home">
+            <Image src="/logo-footer.svg" height={122} alt="logo" width={86} />
+          </Link>
         </div>
         <nav className="flex flex-col gap-6 md:flex-row">
           <ul className="flex flex-col gap-2 md:gap-6">
