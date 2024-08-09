@@ -39,6 +39,7 @@ export default function HeroImage() {
         {...restProps}
         style={{ width: '100%', height: 'auto' }}
         alt="Salon, chairs and mirrors"
+        className="rounded-3xl"
       />
     </picture>
   );

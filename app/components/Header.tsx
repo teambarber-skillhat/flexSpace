@@ -4,7 +4,7 @@ import Image from 'next/image';
 
 export default function Header() {
   return (
-    <header className="xs:flex block items-center justify-between rounded-b-3xl bg-bgColorHero px-6 py-4 md:px-12 lg:px-[120px]">
+    <header className="block items-center justify-between bg-bgColorHero px-6 py-4 xs:flex md:px-12 lg:px-[120px]">
       <div>
         <Image
           src="/logo-header.svg"
@@ -13,7 +13,7 @@ export default function Header() {
           width={86}
         />
       </div>
-      <nav className="xs:mt-0 mt-4 flex justify-end">
+      <nav className="mt-4 flex justify-end xs:mt-0">
         <ul className="flex gap-2 text-base md:gap-6">
           <li>
             <Link

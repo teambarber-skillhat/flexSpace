@@ -13,7 +13,7 @@ const config: Config = {
     },
     colors: {
       bgColor: '#f7f7f7',
-      bgColorHero: 'rgba(245, 237, 230, 0.16)',
+      bgColorHero: '#FDF0E3',
       accentColor: '#D26500',
       iconPrimary: '#FC8E28',
       iconBgPrimary: '#FFF6ED',
