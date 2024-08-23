@@ -25,12 +25,12 @@ export default function WhySection({
         <div
           className={clsx(
             first
-              ? 'xl:mr-20 order-first lg:mr-10'
-              : 'xl:ml-20 order-last lg:ml-10',
+              ? 'order-first lg:mr-10 xl:mr-20'
+              : 'order-last lg:ml-10 xl:ml-20',
             'flex-1',
           )}
         >
-          <h2 className="xl:text-[40px] text-2xl font-bold leading-[60px] tracking-[-1.75px] text-mainDarkColor lg:text-[28px]">
+          <h2 className="text-2xl font-bold leading-[60px] tracking-[-1.75px] text-mainDarkColor lg:text-[28px] xl:text-[40px]">
             Why <span className="text-accentColor">{accentTitle}</span> {title}
           </h2>
           <p className="mb-6 text-base font-medium leading-8 tracking-[-0.3px] text-textColorDark">

@@ -4,7 +4,7 @@ import Image from 'next/image';
 
 export default function Header() {
   return (
-    <header className="xl:px-[120px] block items-center justify-between bg-bgColorHero px-6 py-4 xs:flex lg:px-12">
+    <header className="block items-center justify-between bg-bgColorHero px-6 py-4 xs:flex lg:px-12 xl:px-[120px]">
       <div>
         <Image
           src="/logo-header.svg"

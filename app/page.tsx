@@ -96,7 +96,7 @@ export default function Home() {
             height={493}
             alt="stylist-with-client"
             width={228}
-            className="xl:left-[950px] absolute left-[65px] top-[280px] xs:left-52 xs:top-[265px] md:left-[470px] md:top-36 lg:left-[650px] lg:top-6"
+            className="absolute left-[65px] top-[280px] xs:left-52 xs:top-[265px] md:left-[470px] md:top-36 lg:left-[650px] lg:top-6 xl:left-[950px]"
           />
         </div>
       </Section>

@@ -4,7 +4,7 @@ import Image from 'next/image';
 
 export default function Footer() {
   return (
-    <footer className="xl:px-[120px] xl:py-20 bg-buttonBg px-6 py-10 lg:px-8 lg:py-20">
+    <footer className="bg-buttonBg px-6 py-10 lg:px-8 lg:py-20 xl:px-[120px] xl:py-20">
       <div className="items-start justify-between lg:flex">
         <div className="mb-6 px-0 py-4">
           <Link href="#home">
