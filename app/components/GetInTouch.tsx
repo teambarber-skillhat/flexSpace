@@ -11,12 +11,12 @@ export default function GetInTouch() {
   const closeModal = () => setIsModalOpen(false);
   return (
     <>
-      <div className="rounded-2xl bg-cardBgThree px-4 py-6 md:flex md:justify-between md:p-8">
+      <div className="rounded-2xl bg-cardBgThree px-4 py-6 lg:flex lg:justify-between lg:p-8">
         <div>
           <h2 className="mb-2 text-lg font-semibold leading-6 tracking-[-0.3px]">
             Still have questions?
           </h2>
-          <p className="mb-4 text-sm font-medium leading-5 tracking-[-0.2px] text-cardTwoText md:text-base">
+          <p className="mb-4 text-sm font-medium leading-5 tracking-[-0.2px] text-cardTwoText lg:text-base">
             Can&apos;t find the answer you&apos;re looking for? Please get in
             touch with our team.
           </p>

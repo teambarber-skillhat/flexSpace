@@ -5,6 +5,7 @@ export async function POST(req) {
   await dbConnect();
   const data = await req.formData();
   const email = data.get('email');
+  const role = data.get('role');
 
   try {
     const existingUser = await User.findOne({ email });
@@ -17,7 +18,7 @@ export async function POST(req) {
       );
     }
 
-    const newUser = new User({ email });
+    const newUser = new User({ email, role });
     await newUser.save();
   } catch (error) {
     return new Response(

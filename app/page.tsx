@@ -18,11 +18,11 @@ export default function Home() {
     <div className="flex min-h-screen flex-col" id="home">
       <Header />
       <Section bgColor="bgColorHero">
-        <h1 className="text-center text-3xl font-bold tracking-[-1.75px] text-mainDarkColor md:text-5xl">
+        <h1 className="text-center text-3xl font-bold tracking-[-1.75px] text-mainDarkColor lg:text-5xl">
           Your Go-To Platform for{' '}
           <span className="text-accentColor">Flexible</span> Salon Space Leasing
         </h1>
-        <p className="p-4 text-center text-base font-medium leading-8 tracking-[-0.3px] text-textColorDark md:p-6">
+        <p className="p-4 text-center text-base font-medium leading-8 tracking-[-0.3px] text-textColorDark lg:p-6">
           Salon Owners, Monetize Your Space. Stylists, Find the Perfect Fit.
           Lease with Flexibility and Ease.
         </p>
@@ -57,7 +57,7 @@ export default function Home() {
           height={400}
           alt="salon-and-master"
           width={382}
-          className="md:order-first md:flex-1"
+          className="lg:order-first lg:flex-1"
         />
       </ForSection>
       <ForSection isHost={false} tag="For Stylist" id="for-stylist">
@@ -67,7 +67,7 @@ export default function Home() {
           height={400}
           alt="booking-and-master"
           width={382}
-          className="md:flex-1"
+          className="lg:flex-1"
         />
       </ForSection>
       <Section id="faq">
@@ -75,7 +75,7 @@ export default function Home() {
           <span className="rounded-3xl bg-iconBgPrimary px-3 py-1 text-titleColorSecondary">
             FAQs
           </span>
-          <h2 className="mb-10 text-center text-2xl font-semibold leading-7 tracking-[-0.3px] text-mainDarkColor md:mb-20 md:text-[28px]">
+          <h2 className="mb-10 text-center text-2xl font-semibold leading-7 tracking-[-0.3px] text-mainDarkColor lg:mb-20 lg:text-[28px]">
             We&apos;re happy to answer your questions
           </h2>
         </div>
@@ -83,8 +83,8 @@ export default function Home() {
         <GetInTouch />
       </Section>
       <Section>
-        <div className="relative h-[600px] overflow-hidden rounded-2xl bg-container px-4 py-6 md:h-[355px] md:self-start md:p-20">
-          <h1 className="text-center font-jockeyOne text-3xl font-bold tracking-[-1.75px] text-cardOneText md:text-start">
+        <div className="relative h-[600px] overflow-hidden rounded-2xl bg-container px-4 py-6 md:h-[355px] lg:self-start lg:p-20">
+          <h1 className="text-center font-jockeyOne text-3xl font-bold tracking-[-1.75px] text-cardOneText lg:text-start">
             Be the First to Experience FlexSpace!
           </h1>
           <p className="mb-6 mt-2 text-xl font-semibold leading-7 tracking-[-0.3px] text-cardOneText">
@@ -92,18 +92,11 @@ export default function Home() {
           </p>
           <Form second={true} />
           <Image
-            src="/stylist-one.png"
-            height={284}
+            src="/iphone.png"
+            height={493}
             alt="stylist-with-client"
-            width={207}
-            className="absolute left-[15.73px] top-[353px] max-h-[284px] rotate-[9deg] transform rounded-xl md:left-[567px] md:top-[115px] lg:left-[820px] lg:top-[80px]"
-          />
-          <Image
-            src="/stylist-two.png"
-            height={131}
-            alt="barber-with-client"
-            width={133}
-            className="absolute left-[251.45px] top-[465.3px] max-h-[131px] rotate-[-7.53deg] transform rounded-lg md:left-[820px] md:top-[220px] lg:left-[1050px] lg:top-[230px] lg:rotate-0"
+            width={228}
+            className="xl:left-[950px] absolute left-[65px] top-[280px] xs:left-52 xs:top-[265px] md:left-[470px] md:top-36 lg:left-[650px] lg:top-6"
           />
         </div>
       </Section>

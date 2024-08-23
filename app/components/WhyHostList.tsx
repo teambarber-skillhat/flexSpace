@@ -41,7 +41,7 @@ const list = [
 
 export default function HostList() {
   return (
-    <ul className="md:grid md:grid-cols-2 md:gap-4">
+    <ul className="lg:grid lg:grid-cols-2 lg:gap-4">
       {list.map((item) => {
         return <Card key={item.title} {...item} />;
       })}

@@ -10,7 +10,7 @@ export default function Section({ children, bgColor, id }: SuptitleProps) {
   return (
     <section
       id={id}
-      className={`px-6 py-5 md:px-12 md:py-20 lg:px-[120px] bg-${bgColor}`}
+      className={`xl:px-[120px] px-6 py-5 lg:px-12 lg:py-20 bg-${bgColor}`}
     >
       {children}
     </section>

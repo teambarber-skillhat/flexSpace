@@ -21,16 +21,16 @@ export default function WhySection({
 }: whySectionProps) {
   return (
     <Section id={id}>
-      <div className="md:flex md:items-center md:justify-between">
+      <div className="lg:flex lg:items-center lg:justify-between">
         <div
           className={clsx(
             first
-              ? 'order-first md:mr-10 lg:mr-20'
-              : 'order-last md:ml-10 lg:ml-20',
+              ? 'xl:mr-20 order-first lg:mr-10'
+              : 'xl:ml-20 order-last lg:ml-10',
             'flex-1',
           )}
         >
-          <h2 className="text-2xl font-bold leading-[60px] tracking-[-1.75px] text-mainDarkColor md:text-[28px] lg:text-[40px]">
+          <h2 className="xl:text-[40px] text-2xl font-bold leading-[60px] tracking-[-1.75px] text-mainDarkColor lg:text-[28px]">
             Why <span className="text-accentColor">{accentTitle}</span> {title}
           </h2>
           <p className="mb-6 text-base font-medium leading-8 tracking-[-0.3px] text-textColorDark">

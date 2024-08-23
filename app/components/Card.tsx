@@ -23,7 +23,7 @@ export default function Card({
   return (
     <li
       className={clsx(
-        'mb-6 flex flex-col items-start justify-center rounded-2xl p-4 md:p-6',
+        'mb-6 flex flex-col items-start justify-center rounded-2xl p-4 lg:p-6',
         bgColor,
       )}
     >

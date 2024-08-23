@@ -4,15 +4,15 @@ import Image from 'next/image';
 
 export default function Footer() {
   return (
-    <footer className="bg-buttonBg px-6 py-10 md:px-8 md:py-20 lg:px-[120px] lg:py-20">
-      <div className="items-start justify-between md:flex">
+    <footer className="xl:px-[120px] xl:py-20 bg-buttonBg px-6 py-10 lg:px-8 lg:py-20">
+      <div className="items-start justify-between lg:flex">
         <div className="mb-6 px-0 py-4">
           <Link href="#home">
             <Image src="/logo-footer.svg" height={122} alt="logo" width={86} />
           </Link>
         </div>
-        <nav className="flex flex-col gap-6 md:flex-row">
-          <ul className="flex flex-col gap-2 md:gap-6">
+        <nav className="flex flex-col gap-6 lg:flex-row">
+          <ul className="flex flex-col gap-2 lg:gap-6">
             <li>
               <Link
                 href="#host"
@@ -30,7 +30,7 @@ export default function Footer() {
               </Link>
             </li>
           </ul>
-          <ul className="flex flex-col gap-2 md:gap-6">
+          <ul className="flex flex-col gap-2 lg:gap-6">
             <li>
               <Link
                 href="#for-host"

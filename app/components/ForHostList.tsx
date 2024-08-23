@@ -35,7 +35,7 @@ const list = [
 
 export default function ForHostList() {
   return (
-    <ul className="gap-6 md:flex-1">
+    <ul className="gap-6 lg:flex-1">
       {list.map((item) => {
         return <ForCard key={item.title} {...item} />;
       })}

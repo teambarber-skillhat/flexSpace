@@ -5,3 +5,14 @@
 html {
   scroll-behavior: smooth;
 }
+
+@layer utilities {
+  .custom-scrollbar {
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE 10+ */
+  }
+
+  .custom-scrollbar::-webkit-scrollbar {
+    display: none; /* Safari and Chrome */
+  }
+}

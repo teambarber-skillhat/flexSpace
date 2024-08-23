@@ -8,6 +8,15 @@ const UserSchema = new mongoose.Schema({
     trim: true,
     lowercase: true,
   },
+  role: {
+    type: String,
+    required: [true, 'Please provide role'],
+    trim: true,
+    enum: {
+      values: ['host', 'pro'],
+      message: 'Role must be either "host" or "pro"',
+    },
+  },
 });
 
 export default mongoose.models.User || mongoose.model('User', UserSchema);

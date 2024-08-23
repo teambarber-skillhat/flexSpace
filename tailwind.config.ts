@@ -14,6 +14,7 @@ const config: Config = {
     colors: {
       bgColor: '#f7f7f7',
       bgColorHero: '#FDF0E3',
+      bgOnCard: 'rgba(28, 34, 43, 0.70)',
       accentColor: '#D26500',
       iconPrimary: '#FC8E28',
       iconBgPrimary: '#FFF6ED',
@@ -40,8 +41,9 @@ const config: Config = {
     screens: {
       sm: '430px',
       xs: '500px',
-      md: '1024px',
-      lg: '1440px',
+      md: '768px',
+      lg: '1024px',
+      xl: '1440px',
     },
   },
   plugins: [],
