@@ -17,9 +17,11 @@ export default function FilterAccordion({
         'p-4 transition-all duration-300 ease-in-out',
         'border-b border-[#e9e9e9]',
       )}
-      onClick={() => setIsOpen(!isOpen)}
     >
-      <div className="flex items-center justify-between">
+      <div
+        className="flex items-center justify-between"
+        onClick={() => setIsOpen(!isOpen)}
+      >
         <span className="text-base font-bold leading-6 tracking-[-0.3px] text-titleColor">
           {title}
         </span>
@@ -40,7 +42,7 @@ export default function FilterAccordion({
           isOpen ? 'max-h-[200px]' : 'max-h-0',
         )}
       >
-        <div className="mb-6 mt-4">{children}</div>
+        <div className="my-4">{children}</div>
       </div>
     </div>
   );

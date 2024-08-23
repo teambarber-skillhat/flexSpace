@@ -1,5 +1,6 @@
 'use client';
 import Link from 'next/link';
+import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 
 export default function FooterNavigation() {
@@ -8,32 +9,32 @@ export default function FooterNavigation() {
   const links = [
     {
       href: '/explore',
-      icon: 'search-normal',
-      activeIcon: 'search-active',
+      icon: 'explore',
+      activeIcon: 'explore-active',
       label: 'Explore',
     },
     {
       href: '/favorites',
-      icon: 'heart',
-      activeIcon: 'heart',
+      icon: 'fav',
+      activeIcon: 'fav-active',
       label: 'Favourites',
     },
     {
       href: '/my-bookings',
-      icon: 'calendar',
-      activeIcon: 'calendar-active',
+      icon: 'book',
+      activeIcon: 'book-active',
       label: 'My bookings',
     },
     {
-      href: '/message',
-      icon: 'messages',
-      activeIcon: 'messages',
-      label: 'Message',
+      href: '/messages',
+      icon: 'message',
+      activeIcon: 'message-active',
+      label: 'Messages',
     },
     {
       href: '/profile',
-      icon: 'profile-circle',
-      activeIcon: 'profile-circle',
+      icon: 'profile',
+      activeIcon: 'profile-active',
       label: 'Profile',
     },
   ];
@@ -51,11 +52,12 @@ export default function FooterNavigation() {
                   : ''
               }
             >
-              <svg width={24} height={24} fill="gray">
-                <use
-                  href={`/sprite-app.svg#icon-${pathname === href ? activeIcon : icon}`}
-                />
-              </svg>
+              <Image
+                src={`/nav/${pathname === href ? activeIcon : icon}.svg`}
+                width={24}
+                height={24}
+                alt={label}
+              />
               {pathname === href && (
                 <p className="font-bold text-accentColor">{label}</p>
               )}

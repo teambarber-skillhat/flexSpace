@@ -4,7 +4,7 @@ import FooterNavigation from '../components/FooterNavigation';
 import HeaderApp from '../components/HeaderApp';
 import { useState } from 'react';
 import MobileModal from '../components/MobileModal';
-import FilterAccordion from '../components/FilterAccordion';
+import Filters from '../components/Filters';
 
 export default function Layout({
   children,
@@ -32,38 +32,7 @@ export default function Layout({
         )}
         {showFilters && (
           <MobileModal isOpen={showFilters} onClose={setShowFilters}>
-            <FilterAccordion title="Sort By">
-              <p className="mb-4">Lowest price</p>
-              <p>Highest price</p>
-            </FilterAccordion>
-            <FilterAccordion title="Distance (miles)">
-              <p className="mb-4">Lowest price</p>
-              <p>Highest price</p>
-            </FilterAccordion>
-            <FilterAccordion title="Price Range">
-              <p className="mb-4">Lowest price</p>
-              <p>Highest price</p>
-            </FilterAccordion>
-            <FilterAccordion title="Booking Model">
-              <p className="mb-4">Lowest price</p>
-              <p>Highest price</p>
-            </FilterAccordion>
-            <FilterAccordion title="Amenities">
-              <p className="mb-4">Lowest price</p>
-              <p>Highest price</p>
-            </FilterAccordion>
-            <FilterAccordion title="Workspace Type">
-              <p className="mb-4">Lowest price</p>
-              <p>Highest price</p>
-            </FilterAccordion>
-            <FilterAccordion title="Speciality">
-              <p className="mb-4">Lowest price</p>
-              <p>Highest price</p>
-            </FilterAccordion>
-            <FilterAccordion title="Rental Type">
-              <p className="mb-4">Lowest price</p>
-              <p>Highest price</p>
-            </FilterAccordion>
+            <Filters />
           </MobileModal>
         )}
       </main>
