@@ -49,7 +49,9 @@ export default function Modal({ isOpen, onClose, children }: ModalProps) {
         </div>
         <div className="flex justify-between border-t border-[#E9E9E9] bg-[#E9E9E9] p-6">
           <button>Clear all</button>
-          <Button primary={true}>Show All</Button>
+          <Button primary={true} onClick={() => onClose(!isOpen)}>
+            Show All
+          </Button>
         </div>
       </div>
     </div>

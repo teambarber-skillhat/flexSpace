@@ -6,7 +6,7 @@ import { salons } from '../api/mockdata';
 export default function SpacesNearYou() {
   return (
     <div className="p-6">
-      <h3 className="mb-4 text-base font-bold text-[#333]">
+      <h3 className="mb-4 text-base font-bold text-headerColor">
         Available Spaces Near You
       </h3>
       <ul className="mb-4 grid grid-cols-2 gap-4">

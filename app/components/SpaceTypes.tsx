@@ -11,7 +11,9 @@ const workspaceTypes = [
 export default function WorkspaceTypes() {
   return (
     <div className="p-6">
-      <h3 className="mb-4 text-base font-bold text-[#333]">Workspace Type</h3>
+      <h3 className="mb-4 text-base font-bold text-headerColor">
+        Workspace Type
+      </h3>
       <ul className="custom-scrollbar flex gap-4 overflow-x-auto">
         {workspaceTypes.map((workspace, index) => (
           <li

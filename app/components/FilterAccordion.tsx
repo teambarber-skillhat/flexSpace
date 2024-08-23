@@ -39,7 +39,7 @@ export default function FilterAccordion({
       <div
         className={clsx(
           'transition-max-height overflow-hidden duration-300 ease-in-out',
-          isOpen ? 'max-h-[200px]' : 'max-h-0',
+          isOpen ? 'max-h-[300px]' : 'max-h-0',
         )}
       >
         <div className="my-4">{children}</div>

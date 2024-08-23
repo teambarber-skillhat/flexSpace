@@ -6,6 +6,7 @@ export const salons = [
     name: 'Leo Barber Shop',
     location: 'Chicago, IL',
     distance: '0.5 mi away',
+    url: 'leo-barber-shop',
   },
   {
     id: 2,
@@ -14,6 +15,7 @@ export const salons = [
     name: 'Glamour Cuts',
     location: 'Chicago, IL',
     distance: '1.2 mi away',
+    url: 'glamour-cuts',
   },
   {
     id: 3,
@@ -22,6 +24,7 @@ export const salons = [
     name: 'Trendy Styles',
     location: 'Chicago, IL',
     distance: '2.3 mi away',
+    url: 'trendy-styles',
   },
   {
     id: 4,
@@ -30,6 +33,7 @@ export const salons = [
     name: 'Elegant Hair',
     location: 'Chicago, IL',
     distance: '0.8 mi away',
+    url: 'elegant-hair',
   },
   {
     id: 5,
@@ -38,6 +42,7 @@ export const salons = [
     name: 'Classic Cuts',
     location: 'Chicago, IL',
     distance: '3.0 mi away',
+    url: 'classic-cuts',
   },
   {
     id: 6,
@@ -46,6 +51,7 @@ export const salons = [
     name: 'Chic Salon',
     location: 'Chicago, IL',
     distance: '1.5 mi away',
+    url: 'chic-salon',
   },
   {
     id: 7,
@@ -54,6 +60,7 @@ export const salons = [
     name: 'Luxury Hair',
     location: 'Chicago, IL',
     distance: '4.0 mi away',
+    url: 'luxury-hair',
   },
   {
     id: 8,
@@ -62,5 +69,6 @@ export const salons = [
     name: 'Elite Styles',
     location: 'Chicago, IL',
     distance: '2.7 mi away',
+    url: 'elite-styles',
   },
 ];

@@ -52,7 +52,7 @@ export default function SpaceCard({
         </p>
       </div>
       <div>
-        <p className="mb-1 text-sm font-semibold text-[#333]">{name}</p>
+        <p className="mb-1 text-sm font-semibold text-headerColor">{name}</p>
         <div className="flex">
           <svg width={18} height={18} className="mr-1">
             <use href={'/sprite-app.svg#icon-location'} />

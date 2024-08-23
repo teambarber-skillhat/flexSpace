@@ -37,6 +37,8 @@ const config: Config = {
       cardTwoText: '#4F5662',
       container: '#FC8415',
       link: '#DEE1E5',
+      headerColor: '#333',
+      gray: '#E9E9E9',
     },
     screens: {
       sm: '430px',
