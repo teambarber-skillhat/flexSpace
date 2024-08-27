@@ -9,6 +9,7 @@ export interface ButtonProps
   primary?: boolean;
   full?: boolean;
   empty?: boolean;
+  disabled?: boolean;
 }
 
 export default function Button({
@@ -16,6 +17,7 @@ export default function Button({
   primary,
   full,
   empty,
+  disabled,
   ...rest
 }: ButtonProps) {
   const { pending } = useFormStatus();
@@ -31,8 +33,12 @@ export default function Button({
           ? 'border border-accentColor bg-mainLightColor text-accentColor hover:bg-buttonBg hover:text-mainLightColor'
           : 'text-mainLightColor',
         full ? 'w-full' : '',
+        disabled
+          ? 'cursor-not-allowed bg-textColor opacity-40 hover:bg-textColor'
+          : '',
       )}
       aria-disabled={pending}
+      disabled={disabled}
     >
       {children}
     </button>

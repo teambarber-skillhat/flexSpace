@@ -5,8 +5,9 @@ import FilterAccordion from '@/app/components/FilterAccordion';
 import Button from '@/app/components/Button';
 import { useRouter, usePathname } from 'next/navigation';
 import { salons } from '@/app/api/mockdata';
+import { useBookingContext } from '@/app/context/BookingContext';
 
-const weekDays = [
+export const weekDays = [
   { day: 'Monday', hours: 'Closed' },
   { day: 'Tuesday', hours: 'Closed' },
   { day: 'Wednesday', hours: '12:00 PM - 2:00 PM' },
@@ -22,6 +23,7 @@ export default function Booking() {
   const pathname = usePathname();
   const url = pathname?.split('/')?.[2];
   const salon = salons.find((salon) => salon.url === url);
+  const { setSalonDetails } = useBookingContext();
 
   return (
     <div>
@@ -205,7 +207,15 @@ export default function Booking() {
             </p>
             <p className="text-[#585858]">Chair-Rental</p>
           </div>
-          <Button primary={true}>Start Booking</Button>
+          <Button
+            primary={true}
+            onClick={() => {
+              router.push(`${pathname}/select-date`);
+              salon && setSalonDetails(salon);
+            }}
+          >
+            Book
+          </Button>
         </div>
       </div>
     </div>

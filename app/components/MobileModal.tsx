@@ -1,14 +1,31 @@
+'use client';
 import React, { Dispatch, SetStateAction, useEffect } from 'react';
 import clsx from 'clsx';
 import Button from './Button';
+import { useRouter, useParams } from 'next/navigation';
 
 interface ModalProps {
   isOpen: boolean;
   onClose: Dispatch<SetStateAction<boolean>>;
+  price?: string;
+  btnText?: string;
+  title: string;
+  disabled: boolean;
   children: React.ReactNode;
 }
 
-export default function Modal({ isOpen, onClose, children }: ModalProps) {
+export default function Modal({
+  isOpen,
+  onClose,
+  price,
+  btnText,
+  title,
+  disabled,
+  children,
+}: ModalProps) {
+  const router = useRouter();
+  const { name } = useParams();
+
   useEffect(() => {
     if (isOpen) {
       document.body.style.overflow = 'hidden';
@@ -42,15 +59,37 @@ export default function Modal({ isOpen, onClose, children }: ModalProps) {
               <use href="/sprite-app.svg#icon-arrow" />
             </svg>
           </button>
-          <p className="font-bold text-accentColor">Filters</p>
+          <p className="font-bold text-accentColor">{title}</p>
         </div>
         <div className="custom-scrollbar h-[75vh] overflow-y-auto p-6">
           {children}
         </div>
         <div className="flex justify-between border-t border-[#E9E9E9] bg-[#E9E9E9] p-6">
-          <button>Clear all</button>
-          <Button primary={true} onClick={() => onClose(!isOpen)}>
-            Show All
+          {price ? (
+            <div>
+              <p className="text-headerColor">
+                from{' '}
+                <span className="text-xl font-bold text-headerColor">
+                  ${price}/hr
+                </span>
+              </p>
+              <p className="text-[#585858]">Chair-Rental</p>
+            </div>
+          ) : (
+            <button className="underline">Clear all</button>
+          )}
+          <Button
+            primary={true}
+            onClick={() => {
+              if (title === 'Select Time') {
+                router.push(`/booking/${name}/confirmation`);
+              } else {
+                onClose(!isOpen);
+              }
+            }}
+            disabled={disabled}
+          >
+            {btnText}
           </Button>
         </div>
       </div>

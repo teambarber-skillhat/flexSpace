@@ -2,6 +2,7 @@
 import React from 'react';
 import Image from 'next/image';
 import { useState } from 'react';
+import { useRouter } from 'next/navigation';
 
 type SpaceCardProps = {
   key: number;
@@ -11,6 +12,7 @@ type SpaceCardProps = {
   location: string;
   distance: string;
   full?: boolean;
+  url: string;
 };
 
 export default function SpaceCard({
@@ -20,10 +22,17 @@ export default function SpaceCard({
   name,
   location,
   distance,
+  url,
 }: SpaceCardProps) {
   const [isFavorite, setIsFavorite] = useState(false);
+  const router = useRouter();
+
   return (
-    <li key={key} className="relative list-none">
+    <li
+      key={key}
+      className="relative list-none hover:cursor-pointer"
+      onClick={() => router.push(`/booking/${url}`)}
+    >
       <Image
         src={image}
         alt={name}
@@ -34,7 +43,10 @@ export default function SpaceCard({
       <button
         className="absolute right-2 top-4 w-[34px] rounded-full bg-bgOnCard p-2"
         type="button"
-        onClick={() => setIsFavorite(!isFavorite)}
+        onClick={(e) => {
+          e.stopPropagation();
+          setIsFavorite(!isFavorite);
+        }}
       >
         {isFavorite ? (
           <svg width={18} height={18} fill="white">

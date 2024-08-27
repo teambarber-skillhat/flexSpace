@@ -31,7 +31,12 @@ export default function Layout({
           ></div>
         )}
         {showFilters && (
-          <MobileModal isOpen={showFilters} onClose={setShowFilters}>
+          <MobileModal
+            isOpen={showFilters}
+            title="Filters"
+            btnText="Show All"
+            onClose={setShowFilters}
+          >
             <Filters />
           </MobileModal>
         )}
