@@ -10,7 +10,7 @@ interface ModalProps {
   price?: string;
   btnText?: string;
   title: string;
-  disabled: boolean;
+  disabled?: boolean;
   children: React.ReactNode;
 }
 
