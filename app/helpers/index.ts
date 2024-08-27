@@ -38,7 +38,7 @@ export function getTimeDifference(
 }
 
 export function addHoursToDuration(duration: string): string {
-  let durationHours = parseFloat(duration);
+  const durationHours = parseFloat(duration);
 
   if (durationHours === 1) {
     return '1 hour';

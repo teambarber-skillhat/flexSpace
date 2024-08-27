@@ -33,7 +33,7 @@ export default function AddCardDetailsModal({ isOpen, onClose }: ModalProps) {
         </div>
 
         <div className="custom-scrollbar h-[85vh] overflow-y-auto p-6">
-          <AddCardForm  onClose={onClose}/>
+          <AddCardForm onClose={onClose} />
         </div>
       </div>
     </div>
