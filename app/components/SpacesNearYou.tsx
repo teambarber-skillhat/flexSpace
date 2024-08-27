@@ -18,6 +18,7 @@ export default function SpacesNearYou() {
             name={salon.name}
             location={salon.location}
             distance={salon.distance}
+            url={salon.url}
           />
         ))}
       </ul>
