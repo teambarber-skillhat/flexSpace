@@ -5,7 +5,7 @@ import Calendar from '@/app/components/Calendar';
 import { useRouter } from 'next/navigation';
 import MobileModal from '@/app/components/MobileModal';
 import TimePicker from '@/app/components/TimePicker';
-import { weekDays } from '../page';
+import { weekDays } from '@/app/api/mockdata';
 import { useBookingContext } from '@/app/context/BookingContext';
 
 const prices = {
