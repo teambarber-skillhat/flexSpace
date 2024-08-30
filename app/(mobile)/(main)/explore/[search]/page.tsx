@@ -1,6 +1,6 @@
 import React from 'react';
 import SpaceCard from '@/app/components/SpaceCard';
-import { salons } from '../../../api/mockdata';
+import { salons } from '@/app/api/mockdata';
 
 export default function SearchPage() {
   return (

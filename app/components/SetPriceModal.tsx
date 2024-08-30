@@ -2,13 +2,11 @@
 import React, { Dispatch, SetStateAction } from 'react';
 import clsx from 'clsx';
 import Button from './Button';
-import { useRouter, useParams } from 'next/navigation';
+import Image from 'next/image';
 
 interface ModalProps {
   isOpen: boolean;
   onClose: Dispatch<SetStateAction<boolean>>;
-  price?: string;
-  btnText?: string;
   title: string;
   disabled?: boolean;
   children: React.ReactNode;
@@ -17,15 +15,10 @@ interface ModalProps {
 export default function Modal({
   isOpen,
   onClose,
-  price,
-  btnText,
   title,
   disabled,
   children,
 }: ModalProps) {
-  const router = useRouter();
-  const { name } = useParams();
-
   return (
     <div
       className={clsx(
@@ -43,9 +36,7 @@ export default function Modal({
       <div className="fixed bottom-0 w-full rounded-t-3xl bg-mainLightColor shadow-lg md:max-w-md">
         <div className="relative flex justify-center border-b border-[#E9E9E9] px-6 py-4">
           <button className="absolute left-6" onClick={() => onClose(!isOpen)}>
-            <svg width={24} height={24}>
-              <use href="/sprite-app.svg#icon-arrow" />
-            </svg>
+            <Image src="/close.svg" alt="close" width={24} height={24} />
           </button>
           <p className="font-bold text-accentColor">{title}</p>
         </div>
@@ -53,31 +44,15 @@ export default function Modal({
           {children}
         </div>
         <div className="flex justify-between border-t border-[#E9E9E9] bg-[#E9E9E9] p-6">
-          {price ? (
-            <div>
-              <p className="text-headerColor">
-                from{' '}
-                <span className="text-xl font-bold text-headerColor">
-                  ${price}/hr
-                </span>
-              </p>
-              <p className="text-[#585858]">Chair-Rental</p>
-            </div>
-          ) : (
-            <button className="underline">Clear all</button>
-          )}
           <Button
             primary={true}
             onClick={() => {
-              if (title === 'Select Time') {
-                router.push(`/booking/${name}/confirmation`);
-              } else {
-                onClose(!isOpen);
-              }
+              onClose(!isOpen);
             }}
             disabled={disabled}
+            full={true}
           >
-            {btnText}
+            Save
           </Button>
         </div>
       </div>

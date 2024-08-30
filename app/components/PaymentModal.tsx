@@ -11,7 +11,7 @@ interface ModalProps {
 
 export default function Modal({ isOpen, onClose }: ModalProps) {
   const [isAddCardOpen, setIsAddCardOpen] = useState(false);
-  const { cardDetails } = useBookingContext();
+  const { cardDetails, setApplePay, setCardDetails } = useBookingContext();
 
   return (
     <div
@@ -59,7 +59,24 @@ export default function Modal({ isOpen, onClose }: ModalProps) {
               </p>
             </div>
 
-            <div className="group cursor-pointer">
+            <div
+              className="group cursor-pointer"
+              onClick={() => {
+                setApplePay(true);
+                onClose(false);
+                setCardDetails({
+                  cardNumber: '',
+                  expiry: '',
+                  cvv: '',
+                  cardName: '',
+                  address: '',
+                  apt: '',
+                  city: '',
+                  state: '',
+                  zip: '',
+                });
+              }}
+            >
               <div className="rounded-2xl border border-transparent bg-[#F2F2F2] px-16 py-12 group-hover:border group-hover:border-gray">
                 <Image
                   src="/apple-pay.svg"

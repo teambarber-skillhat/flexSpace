@@ -1,3 +1,9 @@
+export function formatHours(hours: number): string {
+  const period = hours >= 12 ? 'PM' : 'AM';
+  const hours12 = hours % 12 || 12;
+  return `${hours12}:00 ${period}`;
+}
+
 export function getTimeDifference(
   startTime: string,
   endTime: string,
@@ -9,12 +15,6 @@ export function getTimeDifference(
   function parseTime(timeStr: string): Date {
     const [hours, minutes] = timeStr.split(':').map(Number);
     return new Date(1970, 0, 1, hours, minutes);
-  }
-
-  function formatHours(hours: number): string {
-    const period = hours >= 12 ? 'PM' : 'AM';
-    const hours12 = hours % 12 || 12;
-    return `${hours12}:00 ${period}`;
   }
 
   const startDate = parseTime(startTime);
@@ -50,4 +50,14 @@ export function addHoursToDuration(duration: string): string {
       : `${durationHours.toFixed(1)} hours`;
 
   return formattedDuration;
+}
+
+export function getFomattedDate(): string {
+  const date = new Date();
+
+  const year = date.getFullYear();
+  const month = (date.getMonth() + 1).toString().padStart(2, '0');
+  const day = date.getDate().toString().padStart(2, '0');
+
+  return `${year}-${month}-${day}`;
 }

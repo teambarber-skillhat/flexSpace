@@ -12,16 +12,22 @@ import toast from 'react-hot-toast';
 export default function Confirmation() {
   const [isOpen, setIsOpen] = useState(false);
   const router = useRouter();
-  const { dateDetails, price, timeDetails, salonDetails, cardDetails } =
-    useBookingContext();
+  const {
+    dateDetails,
+    price,
+    timeDetails,
+    salonDetails,
+    cardDetails,
+    applePay,
+  } = useBookingContext();
 
   const { start, end, diff } = getTimeDifference(
     timeDetails.checkIn,
     timeDetails.checkOut,
   );
-  const preTax = price * Number(diff);
-  const tax = preTax * 0.08;
-  const total = preTax + tax;
+  const preTax = Math.round(price * Number(diff) * 10) / 10;
+  const tax = Math.round(preTax * 0.08 * 10) / 10;
+  const total = Math.round((preTax + tax) * 10) / 10;
 
   return (
     <div className="flex items-center justify-center">
@@ -134,26 +140,30 @@ export default function Confirmation() {
               className="flex cursor-pointer justify-between"
               onClick={() => setIsOpen(!isOpen)}
             >
-              {!cardDetails.cardNumber ? (
+              {!cardDetails.cardNumber && !applePay ? (
                 <span className="text-sm font-medium text-headerColor">
                   Select Payment method
                 </span>
               ) : (
                 <div className="flex justify-center gap-1">
                   <Image
-                    src="/visa.svg"
+                    src={
+                      cardDetails.cardNumber ? '/visa.svg' : '/apple-pay.svg'
+                    }
                     height={32}
                     alt="visa"
                     width={32}
                     className="h-8 w-8"
                   />
-                  <span className="mt-2 text-[#838383]">
-                    ****{' '}
-                    {cardDetails.cardNumber.slice(
-                      cardDetails.cardNumber.length - 5,
-                      cardDetails.cardNumber.length - 1,
-                    )}
-                  </span>
+                  {cardDetails.cardNumber && (
+                    <span className="mt-2 text-[#838383]">
+                      ****{' '}
+                      {cardDetails.cardNumber.slice(
+                        cardDetails.cardNumber.length - 5,
+                        cardDetails.cardNumber.length - 1,
+                      )}
+                    </span>
+                  )}
                 </div>
               )}
 
@@ -178,10 +188,14 @@ export default function Confirmation() {
             onClick={() => {
               toast.success(
                 'Your booking has been placed and is now awaiting approval.',
+                {
+                  duration: 3000,
+                },
               );
-              router.push('/explore');
+              // router.push('/explore');
+              router.replace('/my-bookings/upcoming');
             }}
-            disabled={!cardDetails.cardNumber}
+            disabled={!cardDetails.cardNumber && !applePay}
           >
             Confirm Booking
           </Button>

@@ -1,9 +1,10 @@
 import React, { Dispatch, FormEvent, SetStateAction, useState } from 'react';
-// import Link from 'next/link';
 import Image from 'next/image';
 import clsx from 'clsx';
 import { useRouter } from 'next/navigation';
 import { usePathname } from 'next/navigation';
+import { getFomattedDate } from '../helpers';
+import { Profile, useProfileContext } from '../context/ProfileContext';
 
 type HeaderProps = {
   isFocused: boolean;
@@ -18,9 +19,10 @@ export default function HeaderApp({
   setIsFocused,
   setShowFilters,
 }: HeaderProps) {
-  const [value, setValue] = useState('');
   const router = useRouter();
   const pathname = usePathname();
+  const [value, setValue] = useState(pathname.split('/')?.[2] || '');
+  const { profileType } = useProfileContext();
 
   const hasSlug = pathname.split('/').length > 2;
 
@@ -49,16 +51,24 @@ export default function HeaderApp({
         )}
       >
         <div className="">
-          <p className="text-base font-bold text-mainLightColor">Hi, Zack</p>
+          <p className="text-base font-bold text-mainLightColor">
+            {profileType === Profile.Host ? 'Hi, Jenny' : 'Hi, Zack'}
+          </p>
           <p className="text-[12px] font-semibold text-mainLightColor">
-            Find Your Perfect Workspace.
+            {profileType === Profile.Host
+              ? 'Turn Your Space into a Money-Maker!'
+              : 'Find Your Perfect Workspace.'}
           </p>
         </div>
 
         <Image
-          src="/avatar.jpg"
+          src={
+            profileType === Profile.Host
+              ? '/avatar-host.jpg'
+              : '/avatar-profile.png'
+          }
           alt="avatar"
-          className="rounded-xl"
+          className="h-10 w-10 rounded-xl object-cover"
           width={40}
           height={40}
         />
@@ -81,6 +91,7 @@ export default function HeaderApp({
           placeholder="search by location or workspace type"
           onFocus={() => setIsFocused(true)}
           onChange={handleChange}
+          value={value}
         />
         {!hasSlug && (
           <button
@@ -101,6 +112,7 @@ export default function HeaderApp({
           <input
             type="date"
             className="w-[180px] rounded-lg bg-mainLightColor px-[14px] py-3"
+            defaultValue={getFomattedDate()}
           />
           <button
             type="button"

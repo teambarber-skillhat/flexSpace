@@ -34,6 +34,8 @@ interface TimeDetails {
 }
 
 interface BookingContextType {
+  applePay: boolean;
+  setApplePay: React.Dispatch<React.SetStateAction<boolean>>;
   dateDetails: DateDetails;
   setDateDetails: React.Dispatch<React.SetStateAction<DateDetails>>;
   salonDetails: SalonDetails;
@@ -91,10 +93,13 @@ export const BookingProvider = ({ children }: { children: ReactNode }) => {
   });
 
   const [price, setPrice] = useState<number>(0);
+  const [applePay, setApplePay] = useState<boolean>(false);
 
   return (
     <BookingContext.Provider
       value={{
+        applePay,
+        setApplePay,
         salonDetails,
         setSalonDetails,
         dateDetails,

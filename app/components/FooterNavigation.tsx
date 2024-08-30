@@ -45,20 +45,20 @@ export default function FooterNavigation() {
         {links.map(({ href, icon, activeIcon, label }) => (
           <li key={href}>
             <Link
-              href={href}
+              href={href === '/my-bookings' ? `${href}/upcoming` : href}
               className={
-                pathname === href
+                pathname.includes(href)
                   ? 'flex gap-2 rounded-[300px] bg-mainLightColor px-3 py-2'
                   : ''
               }
             >
               <Image
-                src={`/nav/${pathname === href ? activeIcon : icon}.svg`}
+                src={`/nav/${pathname.includes(href) ? activeIcon : icon}.svg`}
                 width={24}
                 height={24}
                 alt={label}
               />
-              {pathname === href && (
+              {pathname.includes(href) && (
                 <p className="font-bold text-accentColor">{label}</p>
               )}
             </Link>

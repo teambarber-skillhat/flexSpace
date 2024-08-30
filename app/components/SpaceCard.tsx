@@ -5,7 +5,6 @@ import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 
 type SpaceCardProps = {
-  key: number;
   image: string;
   price: string;
   name: string;
@@ -16,7 +15,6 @@ type SpaceCardProps = {
 };
 
 export default function SpaceCard({
-  key,
   image,
   price,
   name,
@@ -29,7 +27,6 @@ export default function SpaceCard({
 
   return (
     <li
-      key={key}
       className="relative list-none hover:cursor-pointer"
       onClick={() => router.push(`/booking/${url}`)}
     >

@@ -29,7 +29,7 @@ export default function Booking() {
         <button
           className="w-[34px] rounded-full bg-bgOnCard p-2"
           type="button"
-          onClick={() => router.push('/explore/Chicago')}
+          onClick={() => router.back()}
         >
           <svg width={18} height={18} fill="white">
             <use href={'/sprite-app.svg#icon-arrow-left'} />
@@ -87,7 +87,7 @@ export default function Booking() {
             </span>
           </div>
         </div>
-        <FilterAccordion title="Available Rental Hours">
+        <FilterAccordion title="Available Rental Hours" initialState={true}>
           <p className="mb-4 text-end text-xs font-medium text-[#585858]">
             Dates and times are in est
           </p>
@@ -146,7 +146,7 @@ export default function Booking() {
         <div className="my-6 flex flex-col items-center rounded-lg bg-gray p-4">
           <p className="mb-2 text-sm font-bold">Host</p>
           <Image
-            src="/avatar.jpg"
+            src="/avatar-host.png"
             alt="avatar"
             className="mb-2 rounded-xl"
             width={40}

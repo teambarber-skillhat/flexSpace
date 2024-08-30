@@ -46,7 +46,7 @@ export default function TimePicker() {
     <>
       {' '}
       <div className="mt-4 flex justify-center gap-6">
-        <div className="">
+        <div className="flex w-[150px] flex-col gap-1">
           <label
             htmlFor="check-in"
             className="text-sm font-medium text-textColor"
@@ -63,7 +63,7 @@ export default function TimePicker() {
           />
         </div>
 
-        <div>
+        <div className="flex w-[150px] flex-col gap-1">
           <label
             htmlFor="check-out"
             className="text-sm font-medium text-textColor"
