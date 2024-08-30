@@ -79,17 +79,17 @@ export const isSetTimeDisabled = ({
 export const getPath = (step: number): string => {
   switch (true) {
     case step >= 1 && step <= 3:
-      return '/basic-info';
+      return 'basic-info';
     case step >= 4 && step <= 8:
-      return '/space-details';
+      return 'space-details';
     case step === 9:
-      return '/availability';
+      return 'availability';
     case step === 10:
-      return '/pricing';
+      return 'pricing';
     case step === 11:
-      return '/badges';
+      return 'badges';
     case step === 12:
-      return '/preview';
+      return 'preview';
     default:
       return '/';
   }
